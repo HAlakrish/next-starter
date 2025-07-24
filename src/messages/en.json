@@ -1,0 +1,17 @@
+{
+  "HomePage": {
+    "title": "Welcome to Next.js Start Template",
+    "description": "This Template uses HeroUI, Drizzle, Next.js, Auth.js, Zod and Tailwind CSS",
+    "ThemeChanger": "Customize your experience"
+  },
+  "Auth": {
+    "signIn": "Sign In",
+    "email": "Email",
+    "password": "Password",
+    "enterEmail": "Enter your email",
+    "enterPassword": "Enter your password",
+    "signingIn": "Signing in...",
+    "invalidCredentials": "Invalid email or password",
+    "signInError": "An error occurred during sign in"
+  }
+}

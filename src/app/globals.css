@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@plugin './hero.ts';
+/* Note: You may need to change the path to fit your project structure */
+@source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@custom-variant dark (&:is(.dark *));
+
+/* RTL Support */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="ltr"] {
+  text-align: left;
+}
+
+/* RTL-specific utilities */
+.rtl-mirror {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .rtl-mirror {
+  transform: scaleX(1);
+}
+
+/* Margin and padding RTL adjustments */
+[dir="rtl"] .ml-auto {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .mr-auto {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/* Flex direction adjustments for RTL */
+[dir="rtl"] .flex-row-reverse {
+  flex-direction: row;
+}
+
+[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
+}
