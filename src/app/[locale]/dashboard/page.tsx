@@ -3,10 +3,11 @@ import { redirect } from "next/navigation";
 import { auth } from "@/auth";
 
 interface Props {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }
 
-export default async function DashboardIndex({ params: { locale } }: Props) {
+export default async function DashboardIndex({ params }: Props) {
+  const { locale } = await params;
   const session = await auth();
 
   // If user is not logged in, redirect to login

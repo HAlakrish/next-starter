@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import { auth, signOut } from "@/auth";
 
 interface Props {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }
 
 function SignOutButton() {
@@ -24,7 +24,8 @@ function SignOutButton() {
   );
 }
 
-export default async function ManagerDashboard({ params: { locale } }: Props) {
+export default async function ManagerDashboard({ params }: Props) {
+  const { locale } = await params;
   const session = await auth();
 
   // If user is not logged in, redirect to login

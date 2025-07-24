@@ -1,10 +1,10 @@
 "use client";
 
 import { useParams } from "next/navigation";
+import { useActionState } from "react";
 
 import { Button, Card, CardBody, CardHeader, Input } from "@heroui/react";
 import { useTranslations } from "next-intl";
-import { useFormState } from "react-dom";
 
 import { authenticate } from "@/lib/actions/auth";
 
@@ -13,7 +13,7 @@ export function SignIn() {
   const locale = params.locale as string;
   const t = useTranslations("Auth");
 
-  const [errorMessage, dispatch] = useFormState(
+  const [errorMessage, dispatch] = useActionState(
     (prevState: string | undefined, formData: FormData) =>
       authenticate(locale, prevState, formData),
     undefined
