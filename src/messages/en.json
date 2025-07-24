@@ -6,6 +6,7 @@
   },
   "Auth": {
     "signIn": "Sign In",
+    "signOut": "Sign Out",
     "email": "Email",
     "password": "Password",
     "enterEmail": "Enter your email",
@@ -13,5 +14,16 @@
     "signingIn": "Signing in...",
     "invalidCredentials": "Invalid email or password",
     "signInError": "An error occurred during sign in"
+  },
+  "Dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back!",
+    "profile": "Profile",
+    "settings": "Settings",
+    "activity": "Activity"
+  },
+  "Error": {
+    "title": "Server error",
+    "description": "There was a problem when trying to authenticate. Please contact us if this error persists."
   }
 }

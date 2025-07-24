@@ -12,6 +12,7 @@ export default function Home() {
       themeChanger={t("ThemeChanger")}
       showThemeSwitcher={true}
       showLanguageSwitcher={true}
+      showUserStatus={true}
       imageUrl="https://placehold.co/500"
       imageWidth={500}
     />
