@@ -47,6 +47,8 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 - **Protected Routes**: Middleware redirects unauthenticated users to login
 - **Beautiful UI**: HeroUI components, Tailwind CSS, dark mode support
 - **Server Actions**: Modern React server actions for authentication
+- **Type Safety**: All API routes and helpers use strict TypeScript types, including custom `Session` types in `src/types/session.d.ts` for compatibility with Auth.js/NextAuth.
+- **Role-based API Protection**: API routes (e.g., `/api/users`) are protected by session and role checks, with granular authorization logic for GET, POST, PATCH requests.
 
 ## Demo Accounts
 
@@ -73,6 +75,8 @@ Password can be anything for demo accounts.
 - Add new roles in `src/lib/zod.ts` and `src/utils/role-utils.ts`
 - Connect to your database in `src/auth.ts` (replace mock users)
 - Add more locales in `messages/`
+- Extend session/user types in `src/types/session.d.ts` for additional fields (e.g., user.id)
+- Update API route logic in `src/app/api/users/route.ts` for more granular permissions or custom business rules
 
 ## License
 
