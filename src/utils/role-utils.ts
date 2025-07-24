@@ -20,7 +20,7 @@ export function getDashboardByRole(role: UserRole): string {
 
 export function canAccessRoute(userRole: UserRole, route: string): boolean {
   // Admin can access all dashboard routes
-  if (userRole === "admin" && route.startsWith("/dashboard")) {
+  if (userRole === "admin" && route.startsWith("/dashboard/admin")) {
     return true;
   }
 

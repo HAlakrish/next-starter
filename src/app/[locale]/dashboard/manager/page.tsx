@@ -14,9 +14,9 @@ function SignOutButton() {
         await signOut();
       }}
     >
-      <button 
-        type="submit" 
-        className="px-4 py-2 bg-red-600 text-white rounded-md border border-red-600 hover:bg-red-700 transition-colors"
+      <button
+        type="submit"
+        className="rounded-md border border-red-600 bg-red-600 px-4 py-2 text-white transition-colors hover:bg-red-700"
       >
         Sign Out
       </button>

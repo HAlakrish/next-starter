@@ -29,11 +29,18 @@ export async function authenticate(
       redirect: false,
     });
 
+    if (result?.error) {
+      return "Invalid credentials.";
+    }
+
     // Get the session to determine user role
     const session = await auth();
     if (session?.user?.role) {
       const dashboardRoute = getDashboardByRole(session.user.role as any);
       redirect(`/${locale}${dashboardRoute}`);
+    } else {
+      // Fallback redirect
+      redirect(`/${locale}/dashboard`);
     }
   } catch (error) {
     if (error instanceof AuthError) {
@@ -46,9 +53,6 @@ export async function authenticate(
     }
     throw error;
   }
-
-  // Fallback redirect if role-based redirect didn't work
-  redirect(`/${locale}/dashboard`);
 }
 
 export async function signOutAction() {
