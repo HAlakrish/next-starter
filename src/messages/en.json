@@ -1,7 +1,7 @@
 {
   "HomePage": {
     "title": "Welcome to Next.js Start Template",
-    "description": "This Template uses HeroUI, Drizzle, Next.js, Auth.js, Zod and Tailwind CSS",
+    "description": "This Template uses HeroUI, Prisma, Next.js, Auth.js, Zod and Tailwind CSS",
     "ThemeChanger": "Customize your experience"
   },
   "Auth": {

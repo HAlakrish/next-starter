@@ -1,7 +1,7 @@
 {
   "HomePage": {
     "title": "مرحبًا بك في قالب البدء Next.js",
-    "description": "يستخدم هذا القالب HeroUI و Drizzle و Next.js و Auth.js و Zod و Tailwind CSS",
+    "description": "يستخدم هذا القالب HeroUI و Prisma و Next.js و Auth.js و Zod و Tailwind CSS",
     "ThemeChanger": "خصص تجربتك"
   },
   "Auth": {
