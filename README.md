@@ -1,3 +1,100 @@
+# Next.js Starter Project
+
+A modern Next.js starter template with TypeScript, Tailwind CSS, Prisma, and more.
+
+## Features
+
+- Next.js 15
+- TypeScript
+- Tailwind CSS
+- Prisma ORM
+- Jest & React Testing Library (unit/integration tests)
+- Internationalization (i18n)
+- NextAuth.js authentication
+- Modular folder structure
+
+## Getting Started
+
+1. **Install dependencies:**
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+2. **Set up environment variables:**
+   - Copy `.env.example` to `.env.local` and update values as needed.
+
+3. **Run the development server:**
+
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. **Build for production:**
+   ```bash
+   npm run build
+   # or
+   yarn build
+   ```
+
+## Project Structure
+
+- `src/` — Main application code
+- `prisma/` — Prisma schema and migrations
+- `public/` — Static assets
+- `tests/` — All Jest/RTL test files
+
+## Testing
+
+This project uses **Jest** and **React Testing Library** for unit and integration testing.
+
+### Test Folder Structure
+
+- All test files are located in the `tests/` directory at the root of the project.
+- Example: `tests/UserStatus.test.tsx` for the `UserStatus` component.
+
+### Running Tests
+
+To run all tests:
+
+```bash
+npm test
+# or
+yarn test
+```
+
+To run tests with coverage:
+
+```bash
+npm test -- --coverage
+# or
+yarn test --coverage
+```
+
+### Jest Configuration
+
+- Jest is configured to work with TypeScript and React.
+- Mocks are used for Next.js navigation, next-auth, and other external dependencies.
+- Problematic ESM modules (such as `@heroui/ripple` and `framer-motion`) are mocked in test files to avoid dynamic import errors.
+
+### Adding New Tests
+
+- Place new test files in the `tests/` directory.
+- Use `.test.tsx` or `.test.ts` extensions for test files.
+- See existing tests for examples of mocking and setup.
+
+---
+
+## Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+---
+
 # Testing
 
 This project uses **Jest** and **React Testing Library** for unit and integration testing.
