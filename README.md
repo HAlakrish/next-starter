@@ -70,7 +70,7 @@ yarn test
 To run tests with coverage:
 
 ```bash
-npm test -- --coverage
+npm run test:coverage
 # or
 yarn test --coverage
 ```
@@ -79,7 +79,6 @@ yarn test --coverage
 
 - Jest is configured to work with TypeScript and React.
 - Mocks are used for Next.js navigation, next-auth, and other external dependencies.
-- Problematic ESM modules (such as `@heroui/ripple` and `framer-motion`) are mocked in test files to avoid dynamic import errors.
 
 ### Adding New Tests
 
@@ -117,7 +116,7 @@ yarn test
 To run tests with coverage:
 
 ```bash
-npm test -- --coverage
+npm run test:coverage
 # or
 yarn test --coverage
 ```
@@ -126,7 +125,6 @@ yarn test --coverage
 
 - Jest is configured to work with TypeScript and React.
 - Mocks are used for Next.js navigation, next-auth, and other external dependencies.
-- Problematic ESM modules (such as `@heroui/ripple` and `framer-motion`) are mocked in test files to avoid dynamic import errors.
 
 ## Adding New Tests
 
