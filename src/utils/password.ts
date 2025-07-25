@@ -64,7 +64,6 @@ export async function verifyPassword(
     // Compare the hashes using a constant-time comparison
     return timingSafeEqual(hash, hashToVerify);
   } catch (error) {
-    console.error("Error verifying password:", error);
     return false;
   }
 }

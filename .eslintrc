@@ -1,6 +1,6 @@
 {
   "extends": ["next/core-web-vitals", "next/typescript", "prettier"],
-  "plugins": ["check-file", "n"],
+  //"plugins": ["check-file", "n"],
   "rules": {
     "prefer-arrow-callback": ["error"],
     "prefer-template": ["error"],

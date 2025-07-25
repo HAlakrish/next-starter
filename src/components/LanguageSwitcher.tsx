@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
+import React from "react";
 import { useTransition } from "react";
 
 import {
@@ -16,6 +17,26 @@ const languages = [
   { code: "en", name: "English", flag: "🇺🇸" },
   { code: "ar", name: "العربية", flag: "🇸🇦" },
 ];
+export function handleLanguageChange(
+  languageCode: string,
+  locale: string,
+  pathname: string,
+  router: { push: (path: string) => void; refresh: () => void },
+  startTransition: (cb: () => void) => void
+) {
+  if (languageCode === locale) return;
+
+  startTransition(() => {
+    const segments = pathname.split("/");
+    segments[1] = languageCode;
+    const newPath = segments.join("/");
+
+    document.cookie = `preferred-locale=${languageCode}; path=/; max-age=${365 * 24 * 60 * 60}; SameSite=Lax`;
+
+    router.push(newPath);
+    router.refresh();
+  });
+}
 
 export function LanguageSwitcher() {
   const locale = useLocale();
@@ -25,23 +46,6 @@ export function LanguageSwitcher() {
 
   const currentLanguage =
     languages.find((lang) => lang.code === locale) || languages[0];
-
-  const handleLanguageChange = (languageCode: string) => {
-    if (languageCode === locale) return;
-
-    startTransition(() => {
-      // Remove current locale from pathname and add new locale
-      const segments = pathname.split("/");
-      segments[1] = languageCode; // Replace the locale segment
-      const newPath = segments.join("/");
-
-      // Set cookie for preference persistence
-      document.cookie = `preferred-locale=${languageCode}; path=/; max-age=${365 * 24 * 60 * 60}; SameSite=Lax`;
-
-      router.push(newPath);
-      router.refresh();
-    });
-  };
 
   return (
     <Dropdown>
@@ -63,7 +67,15 @@ export function LanguageSwitcher() {
       </DropdownTrigger>
       <DropdownMenu
         aria-label="Language selection"
-        onAction={(key) => handleLanguageChange(key as string)}
+        onAction={(key) =>
+          handleLanguageChange(
+            key as string,
+            locale,
+            pathname,
+            router,
+            startTransition
+          )
+        }
         selectedKeys={new Set([locale])}
         selectionMode="single"
       >

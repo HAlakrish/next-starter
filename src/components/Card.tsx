@@ -1,5 +1,7 @@
 "use client";
 
+import React from "react";
+
 import { Card, CardBody, CardFooter, CardHeader, Image } from "@heroui/react";
 
 import { LanguageSwitcher } from "./LanguageSwitcher";
